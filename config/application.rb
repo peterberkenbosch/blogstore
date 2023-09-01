@@ -54,5 +54,8 @@ module Blogstore
         FactoryBot.definition_file_paths = solidus_paths + extension_paths + app_paths
       end
     end
+
+    # Disable the build in css_compressor.
+    config.assets.css_compressor = nil
   end
 end
