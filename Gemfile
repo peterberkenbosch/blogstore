@@ -73,3 +73,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "solidus", "~> 4.1"
+
+gem "solidus_auth_devise", "~> 2.5"
