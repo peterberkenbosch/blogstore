@@ -1,6 +1,22 @@
 <section class="grid min-h-screen place-items-center bg-sky-100">
+
   <div class="p-6">
     <h1 class="text-center text-4xl font-extrabold leading-tight text-gray-800"><%= Spree::Store.default.name%></h1>
     <p class="mt-6 text-center text-lg font-light text-gray-700">Whether you prefer fiction or non-fiction, we have something for everyone. Start browsing now and find your next adventure!</p>
   </div>
+
+  <div class="grid grid-cols-1 gap-8 p-8 md:grid-cols-2">
+    <% Spree::Product.take(4).each do |product| %>
+      <div class="m-12 flex items-center gap-6 rounded-md bg-gray-100 p-6">
+        <div class="basis-1/3">
+          <%= image_tag product.gallery.images.first.url(:product), class: "rounded-md" %>
+        </div>
+        <div class="basis-2/3">
+          <h2 class="text-xl font-bold"><%= product.name %></h2>
+          <p class="mt-1 text-sm leading-relaxed"><%= product.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 </section>
